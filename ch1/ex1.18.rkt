@@ -21,5 +21,12 @@
       (- (mult-iter a (- b)))
       (iter 0 a b)))
 
+(mult-recur -3 7)
+(mult-recur 3 -7)
+(mult-recur 3 7)
+(mult-recur 456 123)
+
+(mult-iter -3 7)
+(mult-iter 3 -7)
 (mult-iter 3 7)
 (mult-iter 456 123)
