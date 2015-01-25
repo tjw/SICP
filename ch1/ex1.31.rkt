@@ -7,11 +7,16 @@
         (iter (next a) (* result (term a)))))
   (iter a 1))
 
+(define (product-recur term a next b)
+  (if (> a b)
+      (term a)
+      (* (term a) (product term (next a) next b))))
+
 (define (inc n) (+ 1 n))
 (define (inc2 n) (+ 2 n))
 
-(define (factorial a) (product identity 1 inc a))
-;(factorial 5)
+(define (factorial a) (product-recur identity 1 inc a))
+(factorial 5)
 
 ; Simplify the formula by factoring a two out of the numerator and steping each time by two while squaring in the term
 (define (square n) (* n n))
