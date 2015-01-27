@@ -1,10 +1,10 @@
 #lang racket
 
 (define (cont-frac-iter n d k)
-  (define (step i acc)
-    (cond ((= i 0) acc)
+  (define (step i prev)
+    (cond ((= i 0) prev)
           (else (step (- i 1)
-                      (/ (n (- i 1)) (+ (d (- i 1)) acc))))))
+                      (/ (n i) (+ (d i) prev))))))
   (step k 0))
                 
 (define (cont-frac-recur n d k)
