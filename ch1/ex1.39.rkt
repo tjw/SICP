@@ -1,11 +1,10 @@
 #lang racket
 
-
+; calculate the innermost nk/dk term first. keep a running tally in 'prev'
 (define (cont-frac-iter n d k)
-  (define (step i prev)
-    (cond ((= i 0) prev)
-          (else (step (- i 1)
-                      (/ (n i) (+ (d i) prev))))))
+  (define (step i acc)
+    (if (= i 0) acc
+        (step (- i 1) (/ (n i) (+ (d i) acc)))))
   (step k 0))
 
 (define (tan-cf x k) (cont-frac-iter (lambda (i) (if (= i 1) x (- (* x x))))
