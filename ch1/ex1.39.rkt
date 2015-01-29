@@ -1,6 +1,6 @@
 #lang racket
 
-; calculate the innermost nk/dk term first. keep a running tally in 'prev'
+; Calculate the innermost nk/dk term first, and then proceed outward, keeping a running tally in the accumulator
 (define (cont-frac-iter n d k)
   (define (step i acc)
     (if (= i 0) acc
