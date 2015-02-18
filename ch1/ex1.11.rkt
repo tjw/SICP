@@ -2,10 +2,11 @@
 
 ;; Recursive version
 (define (f-recur n)
-  (cond ((< n 3) n)
-        (else (+ (f-recur (- n 1))
-                 (* 2 (f-recur (- n 2)))
-                 (* 3 (f-recur (- n 3)))))))
+  (if (< n 3)
+      n
+      (+ (f-recur (- n 1))
+         (* 2 (f-recur (- n 2)))
+         (* 3 (f-recur (- n 3))))))
 
 ;; Iterative version
 (define (f-iter n)
@@ -18,9 +19,10 @@
         ; substituting i for i+1: f(i+1) = f(i) + 2f(i-1) + 3f(i-2)
         (iter (+ 1 i) fi fi1 fi2)))
     
-  (cond ((< n 3) n)
-        ;; start iteration at 3 and pass in f(n-1), f(n-2), f(n-3)
-        (else (iter 3 2 1 0))))
+  (if (< n 3)
+      n
+      ;; start iteration at 3 and pass in f(n-1), f(n-2), f(n-3)
+      (iter 3 2 1 0)))
 
 (f-recur 0)
 (f-recur 1)
