@@ -6,12 +6,8 @@
 
 x
 
-(reverse x)
-
 (define (deep-reverse items)
-  (cond ((null? items) items)
-        ((not (pair? items)) items)
-        (else (reverse (map reverse items)))))
+  (if (not (pair? items)) items
+      (reverse (map reverse items))))
 
 (deep-reverse x)
-
