@@ -29,7 +29,7 @@
          (branch-weight (right-branch mobile)))))
 
 
-(define m
+(define some-damn-mobile
   (make-mobile
    (make-mobile
     (make-branch 10 (make-mobile (make-branch 5 2) (make-branch 4 5)))
