@@ -62,7 +62,7 @@
     (flatmap add-safe-columns boards))
   
   ; starting from list of one empty board (zero columns), append columns to fill the board size
-  (iterate board-size extend-safe-boards '(())))
+  (iterate board-size extend-safe-boards (list empty-board)))
 
 ;;;;
 
