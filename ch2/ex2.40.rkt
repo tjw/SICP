@@ -48,8 +48,8 @@
         (cadr pair) 
         (+ (car pair) (cadr pair))))
 
-(define (flatmap proc seq)
-  (accumulate append null (map proc seq)))
+;(define (flatmap proc seq)
+;  (accumulate append null (map proc seq)))
 
 (define (prime-sum-pairs n)
   (map make-pair-sum
