@@ -23,7 +23,9 @@
   (map (lambda (mv) (dot-product mv v)) m))
 
 (define (transpose mat)
-  (accumulate-n (lambda (heads tails) (map cons (reverse heads) tails)) null mat))
+  (accumulate-n (lambda (heads tails)
+                  (map cons (reverse heads) tails))
+                null mat))
 
 
 (define m '((1 2) (3 4)))

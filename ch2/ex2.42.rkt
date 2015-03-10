@@ -66,5 +66,5 @@
 
 ;;;;
 
-(queens 8)
+(length (queens 8))
 ; 92 results
