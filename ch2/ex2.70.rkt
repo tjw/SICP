@@ -87,5 +87,10 @@
                      WAH YIP YIP YIP YIP YIP YIP YIP YIP YIP
                      SHA BOOM))
 
-(encode ex-message ex-tree)
+(length (encode ex-message ex-tree)); 84
+
 (decode (encode ex-message ex-tree) ex-tree)
+
+; with a fixed length code, we'd need 3 bits per symbol.
+(* 3 (length ex-message)) ; 108
+
