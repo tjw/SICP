@@ -12,7 +12,10 @@
   (iter trials 0))
 
 (define (estimate-pi trials)
-  (/ 4 (monte-carlo trials inside-unit-circle?)))
+  (define percent-inside-circle (monte-carlo trials inside-unit-circle?))
+  (display percent-inside-circle) (newline)
+  (define circle-area (* 4 percent-inside-circle))
+  circle-area) ; seems wrong since my circle has a radius of 1, so this should be 2*pi
 
 (define (unit-random)
   (- (* 2 (random)) 1))
@@ -24,4 +27,4 @@
     ;(newline)
     (< (+ (* x x) (* y y)) 1)))
 
-(estimate-pi 10000)
+(+ 0.0 (estimate-pi 10000000)) ; cast to float
